@@ -1,0 +1,12 @@
+/* Define the styles for headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif; /* Choose your desired font */
+    color: #333; /* Set the text color */
+}
+
+/* Set the background gradient for all pages */
+body {
+    background: linear-gradient( #add8e6, #f5f5dc); /* Light blue to beige gradient */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CRN Technologies - Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <style>
+        /* Add your custom CSS styles for the gallery here */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Adjust as needed */
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px; /* Set the desired height for all images */
+            object-fit: cover; /* Maintain aspect ratio and cover the container */
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Add shadow */
+            border: 1px solid #ccc; /* Add a border */
+            margin: 10px; /* Add space around each image */
+        }
+
+        .image-description {
+            padding: 10px;
+            background-color: #f0f0f0; /* Background color for description */
+            border: 1px solid #ddd; /* Border for description */
+            margin: 10px; /* Add space around description */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="request.html">Submit a Request</a></li>
+        </ul>
+    </nav>
+
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="image1.jpg" alt="Image 1" class="gallery-image">
+            <div class="image-description">Description for Image 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image2.jpg" alt="Image 2" class="gallery-image">
+            <div class="image-description">Description for Image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="image3.jpg" alt="Image 3" class="gallery-image">
+            <div class="image-description">Description for Image 3</div>
+        </div>
+        <!-- Add more gallery items as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
+    </footer>
+</body>
+</html>
