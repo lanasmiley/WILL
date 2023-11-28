@@ -4,9 +4,18 @@ h1, h2, h3, h4, h5, h6 {
     color: #333; /* Set the text color */
 }
 
-/* Set the background gradient for all pages */
 body {
-    background: linear-gradient( #add8e6, #f5f5dc); /* Light blue to beige gradient */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin-bottom: 60px; /* Adjust as needed to make space for the copyright */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+
 }

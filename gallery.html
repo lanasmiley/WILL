@@ -1,38 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>CRN Technologies - Gallery</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRN Technologies - Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
     <style>
-        /* Add your custom CSS styles for the gallery here */
+        footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: url('background.jpg') center center/cover no-repeat; /* Replace 'your-background-image.jpg' with the path to your image */
+            color: #ffffff;
+            height: 250px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #000000;
+            /* Adjust the color for the active link */
+        }
+
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px; /* Adjust as needed */
+            overflow-y: auto; /* Allow vertical scrolling */
+            max-height: calc(100vh - 230px); /* Maximum height with room for header, navigation, and footer */
         }
 
         .gallery-item {
             overflow: hidden;
             text-align: center;
+            cursor: pointer;
+            width: 200px; /* Set the width of each item */
         }
 
         .gallery-image {
             width: 100%;
-            height: 200px; /* Set the desired height for all images */
+            height: auto;
+            max-height: 200px; /* Set the desired max height for all images */
             object-fit: cover; /* Maintain aspect ratio and cover the container */
             box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); /* Add shadow */
             border: 1px solid #ccc; /* Add a border */
-            margin: 10px; /* Add space around each image */
+            margin: 10px auto; /* Center the images and add space around each image */
         }
 
         .image-description {
-            padding: 10px;
-            background-color: #f0f0f0; /* Background color for description */
-            border: 1px solid #ddd; /* Border for description */
-            margin: 10px; /* Add space around description */
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 20px;
+            box-sizing: border-box;
             text-align: center;
+            z-index: 1000;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -42,30 +113,53 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="request.html">Submit a Request</a></li>
-        </ul>
+        <div class="container">
+            <a href="home.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="about_us.html">About Us</a>
+            <a href="become_a_partner.html">Become a Partner</a>
+            <a href="our_partners.html">Our Partners</a>
+            <a href="request.html">Special Requests</a>
+        </div>
     </nav>
 
     <section class="gallery">
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="showImage('image1.jpg', 'Description for Image 1')">
             <img src="image1.jpg" alt="Image 1" class="gallery-image">
-            <div class="image-description">Description for Image 1</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="showImage('image2.jpg', 'Description for Image 2')">
             <img src="image2.jpg" alt="Image 2" class="gallery-image">
-            <div class="image-description">Description for Image 2</div>
         </div>
-        <div class="gallery-item">
+        <div class="gallery-item" onclick="showImage('image3.jpg', 'Description for Image 3')">
             <img src="image3.jpg" alt="Image 3" class="gallery-image">
-            <div class="image-description">Description for Image 3</div>
         </div>
         <!-- Add more gallery items as needed -->
     </section>
 
+    <div id="image-modal" class="image-description">
+        <span class="close-button" onclick="closeImageModal()">X</span>
+        <img id="selected-image" src="" alt="Selected Image" style="max-width: 100%;">
+        <p id="image-description"></p>
+    </div>
+
     <footer>
         <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showImage(imageSrc, description) {
+            document.getElementById('selected-image').src = imageSrc;
+            document.getElementById('image-description').innerText = description;
+            document.getElementById('image-modal').style.display = 'block';
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').style.display = 'none';
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-zq4I9RS6eV3CWjSLqq6xozu1npJXbrPhoWi5MfMzZLzD7IdUZANDfe3dzZ1J2tAk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8+SHBy2IsDsJHL0TLf0AjhPXfBWr+oHTtMzTY+16Gz6ra4QXj9oiVBu9dd9d" crossorigin="anonymous"></script>
 </body>
 </html>

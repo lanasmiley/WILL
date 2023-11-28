@@ -1,61 +1,163 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>CRN Technologies - Home</title>
+<html lang="en">
+  <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CRN Technologies - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
 
+}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: url('background.jpg') center center/cover no-repeat; /* Replace 'your-background-image.jpg' with the path to your image */
+            color: #ffffff;
+            height: 250px; /* Adjust the height as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a.active {
+            color: #000000;
+            /* Adjust the color for the active link */
+        }
+
+        section {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            max-width: 800px;
+        }
+
+        section h2 {
+            color: #007bff;
+        }
+
+       
+
+        iframe {
+            width: 100%;
+            height: 300px; /* Set the desired height for the map */
+            border: none;
+        }
+
+        .contact-location h3 {
+            color: #007bff;
+        }
+
+        content {
+            flex: 1;
+        }
+        
+    </style>
 </head>
 <body>
     <header>
         <h1>CRN Technologies</h1>
     </header>
+
+    <nav>
+        <div class="container">
+            <a href="home.html" class="active">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about_us.html">About Us</a>
+            <a href="become_a_partner.html">Become a Partner</a>
+            <a href="our_partners.html">Our Partners</a>
+            <a href="request.html">Special Requests</a>
+        </div>
+    </nav>
+
+    <content>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to CRN Technologies! We are a trusted security system supplier located in Port Elizabeth, South Africa.</p>
+        </section>
     
-   
-        <nav>
+        <section id="services">
+            <h2>Our Services</h2>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="request.html">Submit a Request</a></li>
+                <li>Security System Installation</li>
+                <li>CCTV Surveillance</li>
+                <li>Access Control Systems</li>
+                <!-- Add more services here -->
             </ul>
-        </nav>
-        
+        </section>
     
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h3>Contact Details</h3>
+                      <p>Email: contact@crntechnologies.com</p>
+                      <p>Phone: 041 360 3420</p>
+                  </div>
+                  
+              </div>
+          </div>
+      </section>
     
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Welcome to CRN Technologies! We are a trusted security system supplier located in Port Elizabeth, South Africa.</p>
-    </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Security System Installation</li>
-            <li>CCTV Surveillance</li>
-            <li>Access Control Systems</li>
-            <!-- Add more services here -->
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <details>
-            <summary>Contact Details</summary>
-            <p>Email: contact@crntechnologies.com</p>
-            <p>Phone: 041 360 3420</p>
-        </details>
-        
-        <details>
-            <summary>Location</summary>
+      <section id="location">
+        <div class="col-md-6">
+            <h2 class="contact-location">Location</h2>
             <p>Address: 38 Boundary Rd, Morningside, Gqeberha, 6025</p>
             <p>Hours: Open until 7 PM</p>
-        </details>
-    </section>
+            
+            <!-- Add the following iframe for the embedded Google Map -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3310.211797660068!2d25.5094887!3d-33.9356803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad0d00f14a1e1%3A0x7cc009f0749dafea!2sCRN%20Technologies!5e0!3m2!1sen!2sza!4v1701155933009!5m2!1sen!2sza" frameborder="0" style="border:0;" allowfullscreen></iframe>
+        </div>
+      </section>
+    </content>
     
-    <!-- Add more sections as needed for your content -->
-    
-    <footer>
-        <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
-    </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-zq4I9RS6eV3CWjSLqq6xozu1npJXbrPhoWi5MfMzZLzD7IdUZANDfe3dzZ1J2tAk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8+SHBy2IsDsJHL0TLf0AjhPXfBWr+oHTtMzTY+16Gz6ra4QXj9oiVBu9dd9d" crossorigin="anonymous"></script>
+
+
+
+  <footer>
+    <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
