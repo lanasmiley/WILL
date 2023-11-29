@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>CRN Technologies - Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"> <!-- Include the desired font -->
     <style>
-        footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #343a40;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px;
-
-}
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
@@ -29,15 +19,22 @@
         }
 
         header {
-            text-align: center;
-            padding: 20px 0;
-            background: url('background.jpg') center center/cover no-repeat; /* Replace 'your-background-image.jpg' with the path to your image */
+            text-align: left;
+            padding: 20px;
+            background: url('background.jpg') center center/cover no-repeat;
             color: #ffffff;
-            height: 250px; /* Adjust the height as needed */
+            height: 250px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin-left: 20px;
+            font-size: 2em;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif; /* Replace with your desired font */
         }
 
         nav {
@@ -55,7 +52,6 @@
 
         nav a.active {
             color: #000000;
-            /* Adjust the color for the active link */
         }
 
         section {
@@ -68,29 +64,39 @@
 
         section h2 {
             color: #007bff;
+            text-align: center;
         }
-
-       
 
         iframe {
             width: 100%;
-            height: 300px; /* Set the desired height for the map */
+            height: 400px;
             border: none;
         }
 
-        .contact-location h3 {
+        .contact-location h2 {
             color: #007bff;
+            text-align: center;
         }
 
         content {
             flex: 1;
         }
-        
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>CRN Technologies</h1>
+        <h1>CRN TECHNOLOGIES</h1>
     </header>
 
     <nav>
@@ -109,55 +115,95 @@
             <h2>About Us</h2>
             <p>Welcome to CRN Technologies! We are a trusted security system supplier located in Port Elizabeth, South Africa.</p>
         </section>
-    
+
         <section id="services">
             <h2>Our Services</h2>
             <ul>
                 <li>Security System Installation</li>
                 <li>CCTV Surveillance</li>
                 <li>Access Control Systems</li>
-                <!-- Add more services here -->
             </ul>
         </section>
-    
+
         <section id="contact">
-          <h2>Contact Us</h2>
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-6">
-                      <h3>Contact Details</h3>
-                      <p>Email: contact@crntechnologies.com</p>
-                      <p>Phone: 041 360 3420</p>
-                  </div>
-                  
-              </div>
-          </div>
-      </section>
-    
-      <section id="location">
-        <div class="col-md-6">
-            <h2 class="contact-location">Location</h2>
-            <p>Address: 38 Boundary Rd, Morningside, Gqeberha, 6025</p>
-            <p>Hours: Open until 7 PM</p>
-            
-            <!-- Add the following iframe for the embedded Google Map -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3310.211797660068!2d25.5094887!3d-33.9356803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad0d00f14a1e1%3A0x7cc009f0749dafea!2sCRN%20Technologies!5e0!3m2!1sen!2sza!4v1701155933009!5m2!1sen!2sza" frameborder="0" style="border:0;" allowfullscreen></iframe>
+            <h2>Contact Us</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Contact Details</h3>
+                        <p>Email: contact@crntechnologies.com</p>
+                        <p>Phone: 041 360 3420</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+<section id="location">
+    <div class="col-md-6">
+        <h2 class="text-center">Location</h2>
+        <p>Address: 38 Boundary Rd, Morningside, Gqeberha, 6025</p>
+        
+        <!-- Add the following div for the opening hours dropdown -->
+        <div id="opening-hours">
+            <label for="hours-dropdown">Hours:</label>
+            <select id="hours-dropdown"></select>
         </div>
-      </section>
+        
+        <!-- Add the following iframe for the embedded Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3310.211797660068!2d25.5094887!3d-33.9356803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e7ad0d00f14a1e1%3A0x7cc009f0749dafea!2sCRN%20Technologies!5e0!3m2!1sen!2sza!4v1701155933009!5m2!1sen!2sza" frameborder="0" style="border:0;" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        // Get the current day and time
+        const now = new Date();
+        const currentDay = now.getDay(); // 0 is Sunday, 1 is Monday, ..., 6 is Saturday
+        const currentHour = now.getHours();
+
+        // Define the opening hours
+        const openingHours = {
+            Monday: { open: 8, close: 19 },
+            Tuesday: { open: 8, close: 19 },
+            Wednesday: { open: 8, close: 19 },
+            Thursday: { open: 8, close: 19 },
+            Friday: { open: 8, close: 19 },
+            Saturday: { open: 0, close: 0 }, // Closed
+            Sunday: { open: 0, close: 0 }   // Closed
+        };
+
+        // Function to check if it's open now
+        function isOpenNow(day, hour) {
+            const { open, close } = openingHours[day];
+            return hour >= open && hour < close;
+        }
+
+        // Function to generate options for the dropdown
+        function generateOptions() {
+            const dropdown = document.getElementById('hours-dropdown');
+
+            if (isOpenNow(Object.keys(openingHours)[currentDay], currentHour)) {
+                dropdown.innerHTML = '<option value="open-now">Open Now until 7 PM</option>';
+            } else {
+                dropdown.innerHTML = '<option value="closed">Closed</option>';
+            }
+
+            Object.keys(openingHours).forEach(day => {
+                dropdown.innerHTML += `<option value="${day}">${day}: ${openingHours[day].open} AM - ${openingHours[day].close} PM</option>`;
+            });
+        }
+
+        // Generate the options on page load
+        generateOptions();
+    </script>
+</section>
     </content>
-    
 
+    <footer>
+        <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
+    </footer>
 
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-zq4I9RS6eV3CWjSLqq6xozu1npJXbrPhoWi5MfMzZLzD7IdUZANDfe3dzZ1J2tAk" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8+SHBy2IsDsJHL0TLf0AjhPXfBWr+oHTtMzTY+16Gz6ra4QXj9oiVBu9dd9d" crossorigin="anonymous"></script>
-
-
-
-  <footer>
-    <p>&copy; 2023 CRN Technologies. All rights reserved.</p>
-</footer>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-zq4I9RS6eV3CWjSLqq6xozu1npJXbrPhoWi5MfMzZLzD7IdUZANDfe3dzZ1J2tAk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8+SHBy2IsDsJHL0TLf0AjhPXfBWr+oHTtMzTY+16Gz6ra4QXj9oiVBu9dd9d" crossorigin="anonymous"></script>
 </body>
 </html>
